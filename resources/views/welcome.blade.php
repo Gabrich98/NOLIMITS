@@ -18,7 +18,7 @@
             html, body {
                 background-color: #fff;
                 background-image:url(imagenes/fondo.jpg);
-                background-size: 80% 100%;
+                background-size: 100% 100%;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
