@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                      <ul class="nav navbar-nav navbar-center">
                          <li><a href="proveedor">Proveedores</a></li>
-                         <li><a href="#">Center 2</a></li>
+                         <li><a href="vehiculo">Veiculos</a></li>
                          <li><a href="#">Center 3</a></li>
                      </ul>
 
