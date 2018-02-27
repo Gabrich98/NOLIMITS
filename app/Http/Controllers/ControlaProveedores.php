@@ -19,7 +19,8 @@ class ControlaProveedores extends Controller
      */
     public function index()
     {
-        return view('proveedores.index');
+        $proveedores=DB::table('proveedors')->get();
+        return view('proveedores.index', compact('proveedores'));
     }
 
     /**
@@ -40,11 +41,12 @@ class ControlaProveedores extends Controller
      */
     public function store(Request $request)
     {
+  
         Proveedor::create($request->all());
 
-        //     return redirect()->route('proveedor.index')->with('info', 'Hemos recibido tu mensaje');
-        // DB::table('proveedores')->insert()
-        // return $request->all();
+        return redirect()->route('proveedor.index')->with('info', 'Hemos recibido tu mensaje');
+ 
+       // return view('proveedores.index');
     }
 
     /**
@@ -55,8 +57,10 @@ class ControlaProveedores extends Controller
      */
     public function show($id)
     {
-        //
-    }
+
+        $proveedor=DB::table('proveedors')->where('id', $id)->first();
+        return view('proveedores.show',compact('proveedor'));
+    } 
 
     /**
      * Show the form for editing the specified resource.
@@ -66,7 +70,8 @@ class ControlaProveedores extends Controller
      */
     public function edit($id)
     {
-        //
+        $proveedor=DB::table('proveedors')->where('id', $id)->first();
+        return view('proveedores.edit',compact('proveedor'));
     }
 
     /**
@@ -78,7 +83,19 @@ class ControlaProveedores extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+     DB::table('proveedors')->where('id',$id)->update([
+        "razon_social" => $request->input('razon_social'),
+        "nombre" => $request->input('nombre'),
+        "apellido" => $request->input('apellido'),
+        "email" => $request->input('email'),
+        "localidad" => $request->input('localidad'),
+        "direccion" => $request->input('direccion'),
+        "telefono" => $request->input('telefono'),
+      
+     ]);
+         return redirect()->route('proveedor.index')->with('info', 'Hemos recibido tu mensaje'); 
+      
     }
 
     /**
@@ -89,6 +106,8 @@ class ControlaProveedores extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        DB::table('proveedors')->where('id',$id)->delete();
+         return redirect()->route('proveedor.index')->with('info', 'Hemos recibido tu mensaje'); 
     }
 }
