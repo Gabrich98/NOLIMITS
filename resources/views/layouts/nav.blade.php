@@ -30,6 +30,10 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/home">Inicio</a></li>
         <li><a href="/proveedor">Proveedores</a></li>
+
+        @if(auth()->user()->hasRoles(['admin','moderador']))
+        <li><a href="/usuario">Usuarios</a></li>
+        @endif
      {{--    <li><a href="#">Page 2</a></li>
         <li><a href="#">Page 3</a></li> --}}
       </ul>

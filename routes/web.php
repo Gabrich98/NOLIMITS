@@ -34,4 +34,5 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('proveedor', 'ControlaProveedores');
+Route::resource('usuario', 'ControlaUsuarios');
 Route::resource('vehiculo', 'ControlaVehiculos');

@@ -12,6 +12,10 @@ use Carbon\Carbon;
 
 class ControlaProveedores extends Controller
 {
+    function __construct(){
+        $this->middleware('auth');
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -84,7 +88,7 @@ class ControlaProveedores extends Controller
     public function update(Request $request, $id)
     {
 
-     DB::table('proveedors')->where('id',$id)->update([
+         DB::table('proveedors')->where('id',$id)->update([
         "razon_social" => $request->input('razon_social'),
         "nombre" => $request->input('nombre'),
         "apellido" => $request->input('apellido'),

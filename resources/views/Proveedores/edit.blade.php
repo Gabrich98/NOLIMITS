@@ -11,7 +11,7 @@
     <div class="row">
     <div class="container col-md-4 col-md-offset-4">
  	<div class="panel panel-default">
-    <div class="panel-heading">Registro</div>
+    <div class="panel-heading">EDITAR PROVEEDOR</div>
     <div class="panel-body">
   
  		{!! Form::open(array('route' => array('proveedor.update', $proveedor->id)))!!}
