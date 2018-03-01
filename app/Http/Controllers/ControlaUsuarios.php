@@ -19,7 +19,7 @@ class ControlaUsuarios extends Controller
 {
      function __construct(){
         $this->middleware('auth');
-         $this->middleware('role:administrador,moderador');//aqui se agregan los roles
+         $this->middleware('role:admin,moderador');//aqui se agregan los roles
      }
     /**
      * Display a listing of the resource.
@@ -29,7 +29,7 @@ class ControlaUsuarios extends Controller
     public function index()
     {
          $usuarios= \App\User::all();
-        return view('usuario.index', compact('usuarios'));
+        return view('usuarios.index', compact('usuarios'));
 
     }
     public function create()

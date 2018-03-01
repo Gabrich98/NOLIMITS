@@ -1,4 +1,7 @@
 <?php
+namespace Illuminate\Support\Facades;
+use \vendor\laravel\framework\src\Illuminate\Support\Facades;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +35,15 @@ Route::get('/', function () {
         Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/cliente/searchredirect', function(){
+    $search=urldecode(e(Input::get("search")));
+    $route="cliente/search/$search";
+    return redirect($route);
 
+});
+Route::get('/cliente/search/{serach}','ControlaClientes@search');
+
+Route::resource('cliente', 'ControlaClientes');
 Route::resource('proveedor', 'ControlaProveedores');
 Route::resource('usuario', 'ControlaUsuarios');
 Route::resource('vehiculo', 'ControlaVehiculos');

@@ -23,10 +23,10 @@
                 background-image:url(imagenes/fondo.jpg);
                 background-size: 100% 100%;
                 color: #636b6f;
-                font-family: 'Raleway', sans-serif;
+                
                 font-weight: 100;
                 height: 100vh;
-                margin: 0;
+                margin: 10;
             }
 
             .full-height {

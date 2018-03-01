@@ -23,26 +23,29 @@
       </button>
       @guest
       @else
-      <a class="navbar-brand" href="/">NO LIMITS</a>
+      <a class="navbar-brand"  href="/">NO LIMITS</a>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/home">Inicio</a></li>
-        <li><a href="/proveedor">Proveedores</a></li>
+        
 
         @if(auth()->user()->hasRoles(['admin','moderador']))
         <li><a href="/usuario">Usuarios</a></li>
+        <li><a href="/cliente">Clientes</a></li>
         @endif
-     {{--    <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li> --}}
+
+        <li><a href="/proveedor">Proveedores</a></li>
+      
       </ul>
       @endguest
+
+
       <ul class="nav navbar-nav navbar-right">
       	@guest
 
-          <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+          <li ><a href="/register" ><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+          <li><a href="/login" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
       	@else
      					<div class="dropdown">
               <button class="btn btn-primary btn-lg" type="button" data-toggle="dropdown">{{ Auth::user()->name }} 
@@ -61,6 +64,7 @@
                                     </li>
                                 </ul>
               </div>
+
               </div>
         @endguest 
      </ul>

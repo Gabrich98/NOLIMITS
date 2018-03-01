@@ -17,7 +17,7 @@
 
 
     
-  <h2>PROVEEDORES</h2>           
+  <h2>USUARIOS</h2>           
   <table class="table table-condensed">
     <thead>
       <tr>
